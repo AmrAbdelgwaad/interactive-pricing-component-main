@@ -52,6 +52,17 @@ select {
   }
 }
 
+.screen-reader {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
 /* colors */
 
 :root {
@@ -69,6 +80,333 @@ select {
   --Dark-Desaturated-Blue: hsl(227, 35%, 25%);
 }
 
-body{
-  font-family: 'Manrope', sans-serif;
+body {
+  font-family: "Manrope", sans-serif;
+  background:
+    url("images/pattern-circles.svg") no-repeat,
+    url("images/bg-pattern.svg") no-repeat;
+  background-size:
+    9.125rem 9.0625rem,
+    auto;
+  background-position:
+    center 4rem,
+    0 0;
+}
+
+/* Header */
+
+.header__title {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--Dark-Desaturated-Blue);
+  margin-top: 5.5rem;
+}
+
+.header__description {
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  color: var(--Grayish-Blue); /*TODO:CHANGE THE COLOR*/
+}
+
+/* Main */
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.pricing {
+  background-color: var(--White);
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 30px -5px rgba(127, 137, 185, 0.15);
+}
+
+.pricing__quantity {
+  text-align: center;
+  margin: 2.12rem 0 0.5rem;
+  color: var(--Grayish-Blue); /*TODO:CHANGE THE COLOR*/
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+}
+
+.pricing__price {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--Grayish-Blue); /*TODO:CHANGE THE COLOR*/
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.price {
+  color: var(--Dark-Desaturated-Blue);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.0625rem;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 17.4375rem;
+  margin: 0 1.5rem 2.13rem;
+}
+
+/***** Track Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--Light-Grayish-Blue-1);
+  height: 0.5rem;
+  border-radius: 0.3125rem;
+}
+
+/******** Firefox ********/
+input[type="range"]::-moz-range-track {
+  background: var(--Light-Grayish-Blue-1);
+  height: 0.5rem;
+  border-radius: 0.3125rem;
+}
+
+input[type="range"]::-moz-range-progress {
+  background-color: var(--Soft-Cyan);
+  height: 0.5rem;
+  border-radius: 0.3125rem;
+}
+
+/***** Thumb Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -12px;
+  background: url("images/icon-slider.svg") no-repeat;
+  background-color: var(--Strong-Cyan);
+  background-position: 0.3rem 0.6rem;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  box-shadow: 0 15px 30px 0 rgba(0, 255, 231, 0.60);
+  cursor: grabbing;
+}
+
+/***** Firefox *****/
+input[type="range"]::-moz-range-thumb {
+  border: none;
+  background: url("images/icon-slider.svg") no-repeat;
+  background-color: var(--Strong-Cyan);
+  background-position: 0.3rem 0.6rem;
+  box-shadow: 0 15px 30px 0 rgba(0, 255, 231, 0.60);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  cursor: grabbing;
+}
+
+/***** The checkbox & the rest of the page *****/
+
+fieldset {
+  padding-bottom: 2.3rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--Light-Grayish-Blue-1);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 2.6875rem;
+  height: 1.375rem;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsla(224, 49%, 87%, 1);
+  border-radius: 34px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 0.875rem;
+  width: 0.875rem;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: hsla(174, 73%, 70%, 1);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px hsla(174, 73%, 70%, 1);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+.Pricing__monthly {
+  margin-right: .75rem;
+  color: var(--Grayish-Blue); /*TODO:CHANGE THE COLOR*/
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.pricing__yearly {
+  margin-left: .75rem;
+  color: var(--Grayish-Blue); /*TODO:CHANGE THE COLOR*/
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.pricing__discount {
+  margin-left:  .3rem;
+  display: inline;
+ padding: 2px 6px 0;
+  margin-bottom: 2px;
+  color: var(--Light-Red); /*TODO:CHANGE THE COLOR*/
+  font-size: 0.625rem;
+  font-weight: 800;
+  border-radius: 0.59375rem;
+  background: hsla(15, 90%, 95%, 1);
+}
+
+.pricing__benefits{
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.pricing__benefits li {
+  margin-top: .69rem;
+  font-size: 0.75rem;
+  color: var(--Grayish-Blue); /*TODO:CHANGE THE COLOR*/
+  font-weight: 600;
+}
+
+.pricing__benefits li img{
+  display: inline;
+  margin-right: 1rem;
+}
+
+.link-wrapper{
+  display: flex;
+  justify-content: center;
+}
+.pricing__link{
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: hsla(226, 100%, 87%, 1);
+  cursor: pointer;
+  background: var(--Dark-Desaturated-Blue);
+  border-radius: 1.28125rem;
+  padding: .81rem 2.88rem;
+  margin: 2.06rem  0  2rem;
+}
+
+.pricing__link:hover{
+  color: var(--White);
+}
+
+
+@media (min-width: 43.75em) {
+  .header__title {
+    font-size: 1.75rem;
+    margin-top: 6.5rem;
+  }
+
+  .header__description {
+    font-size: 0.9375rem;
+  }
+
+  .flex-group {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .pricing__quantity {
+    margin: 3.62rem 0 2.63rem 2.87rem;
+    font-size: 0.875rem;
+    letter-spacing: 0.125rem;
+
+  }
+
+  .pricing__price {
+    margin: 2.5rem 3rem 2.63rem 0;
+    font-size: 1rem;
+  }
+
+  .price {
+    font-size: 2.5rem;
+  }
+
+  input[type="range"] {
+    width: 27.75rem;
+    margin: 0 3rem 2.5rem;
+  }
+
+  .Pricing__monthly {
+    margin-right: 1rem;
+  }
+
+  .pricing__yearly {
+    margin-left: 1rem;
+  }
+
+  .pricing__discount {
+    margin-left: -16px;
+    display: inline;
+    position: relative;
+    visibility: hidden;
+  }
+
+  .pricing__discount:after {
+    visibility: visible;
+    left: 0;
+    top: 0;
+    content: "25% discount";
+    padding: 2px 6px 0;
+    border-radius: 0.59375rem;
+    background: hsla(15, 90%, 95%, 1);
+  }
+
+  .pricing__footer{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 3rem 0;
+  }
+
+  .pricing__benefits{
+    margin-top: 2rem;
+    text-align: left;
+  }
+  .pricing__link{
+    margin: 2.94rem  0  2.94rem;
+  }
 }

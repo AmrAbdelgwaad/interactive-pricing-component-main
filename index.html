@@ -23,8 +23,60 @@
     />
   </head>
   <body>
-    <!-- Simple, traffic-based pricing Sign-up for our 30-day trial. No credit card
-    required. Pageviews $ /month Monthly Billing Yearly Billing 25% discount
-    Unlimited websites 100% data ownership Email reports Start my trial-->
+    <header class="header">
+      <h1 class="header__title">Simple, traffic-based pricing</h1>
+      <p class="header__description">
+        Sign-up for our 30-day trial. No credit card required.
+      </p>
+    </header>
+
+    <main>
+      <div class="pricing">
+        <div class="flex-group">
+          <p class="pricing__quantity" aria-live="polite">
+            <span class="page"></span> Pageviews
+          </p>
+          <p class="pricing__price" aria-live="polite">
+            <span class="price">$</span> / month
+          </p>
+        </div>
+        <label for="range"></label>
+        <input type="range" name="" id="range" min="0" max="4" step="1" />
+
+        <fieldset class="pricing__toggle">
+          <legend class="screen-reader">select a billing cycle</legend>
+          <p class="Pricing__monthly">Monthly Billing</p>
+          <label class="switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <span class="slider round"></span>
+          </label>
+          <p class="pricing__yearly">Yearly Billing</p>
+          <p class="pricing__discount">-25%</p>
+        </fieldset>
+
+        <div class="pricing__footer">
+          <div>
+            <ul class="pricing__benefits">
+              <li>
+                <img src="images/icon-check.svg" alt="" />
+                <span>Unlimited websites</span>
+              </li>
+              <li>
+                <img src="images/icon-check.svg" alt="" />
+                <span>100% data ownership</span>
+              </li>
+              <li>
+                <img src="images/icon-check.svg" alt="" />
+                <span>Email reports</span>
+              </li>
+            </ul>
+          </div>
+          <div class="link-wrapper">
+            <a class="pricing__link">Start my trial</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="main.js"></script>
   </body>
 </html>
