@@ -15,7 +15,7 @@ Users should be able to:
 
 ![Design preview for the Interactive pricing component coding challenge](./design/desktop-preview.jpg)
 
-- ### [Live Site URL:](https://your-live-site-url.com)
+- ### [Live Site URL:](https://amrabdelgwaad.github.io/interactive-pricing-component-main/)
 
 ### Built with
 
